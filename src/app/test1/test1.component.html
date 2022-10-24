@@ -1,0 +1,28 @@
+<p>test1 works!</p>
+<div *ngFor="let product of products">
+    <div *ngIf="product.libelle=='hp'">
+        <div [style.backgroundColor]="'red'">
+            {{product.idFournisseur}}
+            {{product.libelle}}
+        </div>
+        
+        </div>
+        
+        <div *ngIf="product.libelle!='hp'">
+            <div [style.backgroundColor]="'green'">
+                {{product.idFournisseur}}
+                {{product.libelle}}
+            </div>
+            
+            </div>
+
+    
+        <div [ngStyle]="{'backgroundColor':product.libelle=='hp'?'red':'green'}">
+            {{product.idFournisseur}}
+            {{product.libelle}}
+        
+        
+        </div>
+</div>
+
+<input type="submit"[ngClass]="changeKlass()" value="send" >

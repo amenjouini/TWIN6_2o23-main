@@ -1,0 +1,22 @@
+<form [formGroup]="formUser" >
+    <label>FirstName</label>
+    <input type="text" formControlName="FirstName">
+    <div *ngIf = "f['FirstName'].invalid">
+        <div *ngIf ="f['FirstName'].errors?.required">required</div>
+        <div *ngIf ="f['FirstName'].errors?.minlength">minlength</div>
+        <div *ngIf ="f['FirstName'].errors?.pattern">pattern</div>
+    </div>
+    <label>LastName</label>
+    <input type="text" formControlName="LastName">
+    <label>BirthDay</label>
+    <input type="text">
+    <label>Email</label>
+    <input type="text" formControlName="Email">
+    <label>Password</label>
+    <input type="text">
+    <label>Profession</label>
+    <input type="text">
+    <label>CustomerCat</label>
+    <input type="text" formControlName="CustomerCat">
+    <input type="submit" value="Save" [disabled]="formUser.invalid">
+</form>
